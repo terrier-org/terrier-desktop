@@ -7,6 +7,17 @@ Desktop Terrier is an example application we have provided for the [Terrier IR p
 
 Importantly, Desktop Terrier is only a sample application to help users become used to the functionality that Terrier provides. We do not recommend Desktop Terrier to perform large or complex indexing jobs. Instead, once you are comfortable with the Terrier functionality, indexing and batch retrieval should be performed using the core Terrier IR platform from the command line. You have been warned.
 
+## Installation
+
+Requirements:
+*   Java 8 (for Terrier 4.2)
+*   A working installation of Maven
+
+Before using Desktop Terrier, you need to download and compile it, using the de-factor standard Java tool Maven:
+
+	git clone https://github.com/terrier-org/terrier-desktop.git
+	mvn assembly:single	
+
 ## Starting Desktop Terrier
 
 *   **Windows**: Double click on `bin\desktop_terrier.bat` to start Desktop Terrier - on some versions of Windows you may receive a warning about the file being suspicious, but you can safely ignore this. Note that you will need at least Java 1.5 or later to run Desktop Terrier.
