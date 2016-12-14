@@ -1,6 +1,6 @@
 # Using the Desktop Search example application for Terrier
 
-Desktop Terrier is an example application we have provided for the (Terrier IR platform)[http://terrier.org] for two purposes:
+Desktop Terrier is an example application we have provided for the [Terrier IR platform](http://terrier.org) for two purposes:
 
 *   To provide a Desktop Search application that will allow users to quickly test out features of Terrier such as for example the Terrier query language.
 *   To give developers an example of using Terrier in an interactive setting.
