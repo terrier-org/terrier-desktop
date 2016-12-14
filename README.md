@@ -17,7 +17,7 @@ Importantly, Desktop Terrier is only a sample application to help users become u
     3.  In File menu, select Get Info (Command-I)
     4.  Select "Terminal" application with "Open with". Terminal is in the folder Applications/Utilities.  
 
-*   **Unix/Linux**: execute the bin/desktop_terrier.sh shell script to start Desktop Terrier. You can do this from an Xterm environment (or similar), or by double clicking bin/desktop_terrier.sh in a Konqueror or Nautilus window (KDE or Gnome).
+*   **Unix/Linux**: execute the `bin/desktop_terrier.sh` shell script to start Desktop Terrier. You can do this from an Xterm environment (or similar), or by double clicking bin/desktop_terrier.sh in a Konqueror or Nautilus window (KDE or Gnome).
 
 ## Running Desktop Terrier
 
