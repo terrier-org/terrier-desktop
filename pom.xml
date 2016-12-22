@@ -6,7 +6,7 @@
 	<artifactId>terrier-desktop</artifactId>
 
 	<properties>
-		<terrier.version>5.0-SNAPSHOT</terrier.version>
+		<terrier.version>4.2</terrier.version>
 	</properties>
 
 	<distributionManagement>
@@ -117,8 +117,8 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<fork>true</fork>
 					<executable>javac</executable>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<!-- <excludes><exclude>**/org/terrier/querying/JonesExpander.java</exclude></excludes> -->
 				</configuration>
 			</plugin>
