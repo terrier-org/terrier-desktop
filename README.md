@@ -13,17 +13,17 @@ Requirements:
 *   Java 8 (for Terrier 4.2)
 *   A working installation of Maven
 
-Before using Desktop Terrier, you need to download and compile it, using the de-factor standard Java tool Maven:
+Before using Desktop Terrier, you need to download and compile it, using the de-facto standard Java tool Maven:
 
 	git clone https://github.com/terrier-org/terrier-desktop.git
 	mvn assembly:single	
 
 ## Starting Desktop Terrier
 
-*   **Windows**: Double click on `bin\desktop_terrier.bat` to start Desktop Terrier - on some versions of Windows you may receive a warning about the file being suspicious, but you can safely ignore this. Note that you will need at least Java 1.5 or later to run Desktop Terrier.
+*   **Windows**: Double click on `bin\desktop_terrier.bat` to start Desktop Terrier - on some versions of Windows you may receive a warning about the file being suspicious, but you can safely ignore this. Note that you will need at least Java 8 or later to run Desktop Terrier.
 
 *   **MacOS X**: Double click on `bin/desktop_terrier.sh` to start Desktop Terrier. Should this fail:
-    1.  Make sure you have Java 1.7
+    1.  Make sure you have Java 8
     2.  Select `bin/desktop_terrier.sh` in Finder
     3.  In File menu, select Get Info (Command-I)
     4.  Select "Terminal" application with "Open with". Terminal is in the folder Applications/Utilities.  
