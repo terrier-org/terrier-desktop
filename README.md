@@ -13,7 +13,7 @@ Requirements:
 *   Java 8 (for Terrier 4.2)
 *   A working installation of Maven
 
-Before using Desktop Terrier, you need to download and compile it, using the de-facto standard Java tool Maven:
+Before using Desktop Terrier, you need to download it from Github, and compile it using the de-facto standard Java tool Maven:
 
 	git clone https://github.com/terrier-org/terrier-desktop.git
 	mvn assembly:single	
