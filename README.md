@@ -1,5 +1,7 @@
 # Using the Desktop Search example application for Terrier
 
+[![Build Status](https://travis-ci.org/terrier-org/terrier-desktop.svg?branch=master)](https://travis-ci.org/terrier-org/terrier-desktop)
+
 Desktop Terrier is an example application we have provided for the [Terrier IR platform](http://terrier.org) for two purposes:
 
 *   To provide a Desktop Search application that will allow users to quickly test out features of Terrier such as for example the Terrier query language.
