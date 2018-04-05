@@ -18,7 +18,7 @@ Requirements:
 Before using Desktop Terrier, you need to download it from Github, and compile it using the de-facto standard Java tool Maven:
 
 	git clone https://github.com/terrier-org/terrier-desktop.git
-	mvn assembly:single	
+	mvn package assembly:single	
 
 ## Starting Desktop Terrier
 
