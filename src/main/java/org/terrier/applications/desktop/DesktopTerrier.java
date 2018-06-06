@@ -80,6 +80,7 @@ import org.terrier.indexing.SimpleFileCollection;
 import org.terrier.matching.ResultSet;
 import org.terrier.querying.Manager;
 import org.terrier.querying.SearchRequest;
+import org.terrier.querying.Request;
 import org.terrier.querying.parser.Query;
 import org.terrier.querying.parser.QueryParser;
 import org.terrier.structures.Index;
@@ -92,6 +93,8 @@ import org.terrier.structures.indexing.singlepass.BlockSinglePassIndexer;
 import org.terrier.utility.ApplicationSetup;
 import org.terrier.utility.Files;
 import org.terrier.utility.Rounding;
+
+import org.terrier.applications.CLITool;
 /**
  * An application that uses the Terrier IR platform, in order to search the
  * desktop of a user.
@@ -112,6 +115,18 @@ import org.terrier.utility.Rounding;
   */
 public class DesktopTerrier extends JFrame {
 	private static final long serialVersionUID = 1L;
+
+	public static class Command extends CLITool {
+		public String commandname() {
+			return "desktop";
+		}
+
+		public int run(String[] args) throws Exception	
+		{
+			DesktopTerrier.main(args);
+			return 0;
+		}
+	}
 
 	/**
 	 * logging variables
@@ -972,34 +987,12 @@ public class DesktopTerrier extends JFrame {
 		if (query == null || query.length() == 0)
 			return;
 		try {
-			Query q = null;
-			try{
-				q = QueryParser.parseQuery(query);
-			} catch (Exception e) {
-				//century kludge!
-				//remove everything except character and spaces, and retry
-				q = QueryParser.parseQuery(query.replaceAll("[^a-zA-Z0-9 ]", ""));	
-			}
-			
-			if (q == null)
-			{
-				//give up
-				return;
-			}
-			if (queryingManager == null)
-			{
-				return;
-			}
-			jTextField.setText(q.toString());	
-			SearchRequest srq = queryingManager.newSearchRequest();
-			srq.setQuery(q);
+			//jTextField.setText(q.toString());	
+			SearchRequest srq = queryingManager.newSearchRequest("qid", query);
+			//srq.setQuery(q);
 			srq.addMatchingModel(mModel, wModel);
-			srq.setControl("c", "1.0d");
-			queryingManager.runPreProcessing(srq);
-			queryingManager.runMatching(srq);
-			queryingManager.runPostProcessing(srq);
-			queryingManager.runPostFilters(srq);
-			renderResults(srq.getResultSet());
+			queryingManager.runSearchRequest(srq);
+			renderResults(((Request)srq).getResultSet());
 		} catch (Exception e) {
 			logger.error("An exception when running the query: #"+query +"# :",e);
 			
