@@ -12,7 +12,7 @@ Importantly, Desktop Terrier is only a sample application to help users become u
 ## Installation
 
 Requirements:
-*   Java 8 (for Terrier 4.2)
+*   Java 8 (for Terrier 5.0)
 *   A working installation of Maven
 
 Before using Desktop Terrier, you need to download it from Github, and compile it using the de-facto standard Java tool Maven:
