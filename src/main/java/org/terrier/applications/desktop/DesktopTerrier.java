@@ -79,10 +79,10 @@ import org.terrier.indexing.Collection;
 import org.terrier.indexing.SimpleFileCollection;
 import org.terrier.matching.ResultSet;
 import org.terrier.querying.Manager;
+import org.terrier.querying.ManagerFactory;
 import org.terrier.querying.SearchRequest;
 import org.terrier.querying.Request;
 import org.terrier.querying.parser.Query;
-import org.terrier.querying.parser.QueryParser;
 import org.terrier.structures.Index;
 import org.terrier.structures.MetaIndex;
 import org.terrier.structures.indexing.Indexer;
@@ -1174,16 +1174,7 @@ public class DesktopTerrier extends JFrame {
 		jLabel1.setText("Number of Tokens: " + diskIndex.getCollectionStatistics().getNumberOfTokens());
 		jLabel2.setText("Number of Unique Terms: " + diskIndex.getCollectionStatistics().getNumberOfUniqueTerms());
 		jLabel3.setText("Number of Pointers: " + diskIndex.getCollectionStatistics().getNumberOfPointers());
-		try{
-			if (managerName.indexOf('.') == -1)
-				managerName = "org.terrier.querying."+managerName;
-			queryingManager = (Manager) (Class.forName(managerName)
-				.getConstructor(new Class[]{Index.class})
-				.newInstance(new Object[]{diskIndex}));
-		} catch (Exception e) {
-			logger.warn("Problem loading Manager ("+managerName+"): ",e);
-			return false;
-		}
+		queryingManager = ManagerFactory.from(diskIndex.getIndexRef());
 		if (queryingManager == null)
 			return false;
 		return true;
